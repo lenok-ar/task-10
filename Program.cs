@@ -16,5 +16,16 @@ namespace task10
       Assert.AreEqual("Некорректный выбор в меню", exception.Message);
       Assert.IsNull(exception.MenuChoice);
     }
+    
+    [TestMethod]
+    public void InvalidMenuChoiceException_MessageConstructor_InitializesCorrectly()
+    {
+      string message = "Текстовое сообщение";
+      InvalidMenuChoiceException exception;
+      exception = new InvalidMenuChoiceException(message);
+
+      Assert.AreEqual(message, exception.Message);
+      Assert.IsNull(exception.MenuChoice);
+    } 
   }
 }
