@@ -34,7 +34,6 @@ namespace task10
       string message = "Тестовое сообщение с выбором";
       string choice = "Вариант 3";
       InvalidMenuChoiceException exception;
-
       exception = new InvalidMenuChoiceException(message, choice);
 
       Assert.AreEqual(message, exception.Message);
