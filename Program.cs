@@ -40,5 +40,18 @@ namespace task10
       Assert.AreEqual(message, exception.Message);
       Assert.AreEqual(choice, exception.MenuChoice);
     }
+
+    [TestMethod]
+    public void InvalidMenuChoiceException_MessageAndInnerExceptionConstructor_InitializesCorrectly()
+    {
+      string message = "Тестовое сообщение с внутренним исключением";
+      Exception innerException = new Exception("Внутреннее сообщение об исключении");
+      InvalidMenuChoiceException exception;
+      exception = new InvalidMenuChoiceException(message, innerException);
+
+      Assert.AreEqual(message, exception.Message);
+      Assert.AreEqual(innerException, exception.InnerException);
+      Assert.IsNull(exception.MenuChoice);
+    }
   }
 }
